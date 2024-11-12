@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
 
-class StationListPageController extends GetxController {
+class StationListController extends GetxController {
   late bool stationtype;
   String startStation = '선택';
   String endStation = '선택';
+
+  bool changedstart = false;
+  bool changedend = false;
 
   void setStationType(bool type) {
     stationtype = type;
@@ -13,8 +16,10 @@ class StationListPageController extends GetxController {
   void setStation(String station) {
     if (stationtype) {
       startStation = station;
+      changedstart = true;
     } else{
       endStation = station;
+      changedend = true;
     }
     update();
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:train_reservation_service/controller/station_list_page_controller.dart';
+import 'package:train_reservation_service/controller/station_list_controller.dart';
 
 class StationListPage extends StatelessWidget {
   StationListPage({super.key});
@@ -24,7 +24,7 @@ class StationListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: GetBuilder<StationListPageController>(
+        title: GetBuilder<StationListController>(
           builder: (controller) {
             return controller.stationtype ? Text('출발역') : Text('도착역');
           }
@@ -41,7 +41,7 @@ class StationListPage extends StatelessWidget {
   Widget stationList(String station) {
     return GestureDetector(
       onTap: () {
-        Get.find<StationListPageController>().setStation(station);
+        Get.find<StationListController>().setStation(station);
         Get.back();
       },
       child: Container(

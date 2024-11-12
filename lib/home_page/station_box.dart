@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:train_reservation_service/controller/station_list_page_controller.dart';
+import 'package:train_reservation_service/controller/station_list_controller.dart';
 
 class StationBox extends StatelessWidget {
   const StationBox({super.key});
@@ -38,7 +38,7 @@ class StationBox extends StatelessWidget {
   Widget station(bool stationType){
     return GestureDetector(
       onTap: () {
-        Get.find<StationListPageController>().setStationType(stationType);
+        Get.find<StationListController>().setStationType(stationType);
         Get.toNamed('/StationListPage');
       },
       child: Column(
@@ -52,7 +52,7 @@ class StationBox extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          GetBuilder<StationListPageController>(
+          GetBuilder<StationListController>(
             builder: (controller) {
               return Text(
                 stationType ? controller.startStation : controller.endStation,

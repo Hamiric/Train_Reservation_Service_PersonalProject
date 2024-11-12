@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:train_reservation_service/controller/station_list_page_controller.dart';
+import 'package:train_reservation_service/controller/seat_controller.dart';
+import 'package:train_reservation_service/controller/station_list_controller.dart';
 
 import 'package:train_reservation_service/home_page/homepage.dart';
 import 'package:train_reservation_service/seat_page/seatpage.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/SeatPage', page: () => SeatPage()),
       ],
       initialBinding: BindingsBuilder(() {
-        Get.lazyPut<StationListPageController>(()=> StationListPageController());
+        Get.lazyPut<StationListController>(()=> StationListController());
+        Get.lazyPut<SeatController>(()=> SeatController());
       }),
       home: const HomePage(),
     );
