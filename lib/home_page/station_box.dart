@@ -7,6 +7,9 @@ class StationBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const bool START_STATION = true;
+    const bool END_STATION = false;
+
     return Container(
       height: 200,
       decoration: BoxDecoration(
@@ -16,7 +19,7 @@ class StationBox extends StatelessWidget {
       child: Row(
         children: [
           Spacer(),
-          station('출발역'),
+          station(START_STATION),
           Spacer(),
           SizedBox(
             height: 50,
@@ -25,35 +28,39 @@ class StationBox extends StatelessWidget {
             ),
           ),
           Spacer(),
-          station('도착역'),
+          station(END_STATION),
           Spacer(),
         ],
       ),
     );
   }
 
-  Widget station(String stationtype){
+  Widget station(bool stationType){
     return GestureDetector(
       onTap: () {
-        Get.find<StationListPageController>().setStationType(stationtype);
+        Get.find<StationListPageController>().setStationType(stationType);
         Get.toNamed('/StationListPage');
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            stationtype,
+            stationType ? '출발역' : '도착역',
             style: TextStyle(
               fontSize: 16,
               color: Colors.grey,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
-            '선택',
-            style: TextStyle(
-              fontSize: 40,
-            ),
+          GetBuilder<StationListPageController>(
+            builder: (controller) {
+              return Text(
+                stationType ? controller.startStation : controller.endStation,
+                style: TextStyle(
+                  fontSize: 40,
+                ),
+              );
+            }
           )
         ],
       ),

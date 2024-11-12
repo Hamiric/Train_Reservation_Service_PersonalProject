@@ -26,7 +26,7 @@ class StationListPage extends StatelessWidget {
         centerTitle: true,
         title: GetBuilder<StationListPageController>(
           builder: (controller) {
-            return Text(controller.stationtype);
+            return controller.stationtype ? Text('출발역') : Text('도착역');
           }
         ),
       ),
@@ -41,7 +41,8 @@ class StationListPage extends StatelessWidget {
   Widget stationList(String station) {
     return GestureDetector(
       onTap: () {
-        // 
+        Get.find<StationListPageController>().setStation(station);
+        Get.back();
       },
       child: Container(
         height: 50,
