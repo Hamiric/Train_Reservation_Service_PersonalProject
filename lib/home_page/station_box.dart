@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:train_reservation_service/controller/station_list_page_controller.dart';
 
 class StationBox extends StatelessWidget {
   const StationBox({super.key});
@@ -31,24 +33,30 @@ class StationBox extends StatelessWidget {
   }
 
   Widget station(String stationtype){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          stationtype,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () {
+        Get.find<StationListPageController>().setStationType(stationtype);
+        Get.toNamed('/StationListPage');
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            stationtype,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        Text(
-          '선택',
-          style: TextStyle(
-            fontSize: 40,
-          ),
-        )
-      ],
+          Text(
+            '선택',
+            style: TextStyle(
+              fontSize: 40,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

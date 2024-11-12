@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:train_reservation_service/controller/station_list_page_controller.dart';
 
 class StationListPage extends StatelessWidget {
   StationListPage({super.key});
@@ -22,7 +24,11 @@ class StationListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('출발역'),
+        title: GetBuilder<StationListPageController>(
+          builder: (controller) {
+            return Text(controller.stationtype);
+          }
+        ),
       ),
       body: ListView.builder(
         itemCount: stationName.length,

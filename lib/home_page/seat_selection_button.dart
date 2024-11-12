@@ -8,7 +8,7 @@ class SeatSelectionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () {
-          Get.toNamed('/StationListPage');
+          Get.toNamed('/SeatPage');
         },
         child: Center(
           child: Padding(
