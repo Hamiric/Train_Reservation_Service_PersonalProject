@@ -1,16 +1,54 @@
-# train_reservation_service
+# Battle RPG GAME
+개인 과제 - 기차 예매 서비스
 
-A new Flutter project.
+## 프로젝트 소개
+아래의 기능들이 있는 기차 예매 서비스 앱
 
-## Getting Started
+<br></br>
 
-This project is a starting point for a Flutter application.
+< 필수 기능 > 
+1. UI 명세서를 정확하게 반영
+2. HomePage 구현
+3. StationListPage 구현
+4. SeatPage 구현
 
-A few resources to get you started if this is your first Flutter project:
+< 도전 기능 >
+1. UX를 고려한 (같은 역 선택 불가) 기능
+2. 다크 테마 적용
+3. 자유 구현
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 적용 기능
+#### < 필수 기능 >
+>* UI 명세서를 정확하게 반영 : 
+<br>UI 명세서에 적힌대로 레이아웃 작성<br><br>
+>* HomePage 구현 : 
+<br>출발역, 도착역을 선택할 수 있는 초기 화면 구현<br><br>
+>* StationListPage 구현 : 
+<br>기차역 리스트를 보여주고 선택할 수 있는 화면 구현<br><br>
+>* SeatPage 구현 :
+<br>좌석을 선택하는 화면 구현
+#### < 도전 기능 >
+>* UX를 고려한 (같은 역 선택 불가) 기능 :
+<br>사용자가 역을 누르면 선택 페이지가 이를 인지하고, 이미 선택한 역을 제외한 목록을 보여주게 하는 기능<br><br>
+>* 다크 테마 적용 :
+<br>앱 전체에 적용되는 다크 테마를 적용하기
+#### < 자유 구현 >
+>* -- : 
+<br>--<br><br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚨 Trouble Shooting
+
+<details>
+<summary>📚[--]</summary>
+<div markdown="1">
+
+### [--](https://hamiric.tistory.com/)
+
+ <br>
+</div>
+</details>
+
+## 📝Technologies & Tools (FE)
+
+![Dart Version](https://img.shields.io/badge/Dart-3.5.4-brightgreen)
+![VSCode Version](https://img.shields.io/badge/VSCode-1.95.0-blue)
