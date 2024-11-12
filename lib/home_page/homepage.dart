@@ -13,19 +13,15 @@ class HomePage extends StatelessWidget {
         title: Text('기차 예매'),
       ),
       backgroundColor: Colors.grey[200],
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Spacer(),
-              StationBox(),
-              SizedBox(height: 20,),
-              SeatSelectionButton(),
-              Spacer(),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            StationBox(),
+            SizedBox(height: 20,),
+            SeatSelectionButton(),
+          ],
         ),
       ),
     );
