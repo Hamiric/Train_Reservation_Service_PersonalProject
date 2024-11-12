@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SeatSelectionButton extends StatelessWidget {
   const SeatSelectionButton({super.key});
@@ -6,7 +7,9 @@ class SeatSelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed('/StationListPage');
+        },
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
