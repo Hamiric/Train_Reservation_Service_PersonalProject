@@ -18,51 +18,49 @@ class StationBox extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Spacer(),
           station(START_STATION),
-          Spacer(),
           SizedBox(
             height: 50,
             child: VerticalDivider(
               thickness: 2,
             ),
           ),
-          Spacer(),
           station(END_STATION),
-          Spacer(),
         ],
       ),
     );
   }
 
   Widget station(bool stationType){
-    return GestureDetector(
-      onTap: () {
-        Get.find<StationListController>().setStationType(stationType);
-        Get.toNamed('/StationListPage');
-      },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            stationType ? '출발역' : '도착역',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-              fontWeight: FontWeight.bold,
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          Get.find<StationListController>().setStationType(stationType);
+          Get.toNamed('/StationListPage');
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              stationType ? '출발역' : '도착역',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          GetBuilder<StationListController>(
-            builder: (controller) {
-              return Text(
-                stationType ? controller.startStation : controller.endStation,
-                style: TextStyle(
-                  fontSize: 40,
-                ),
-              );
-            }
-          )
-        ],
+            GetBuilder<StationListController>(
+              builder: (controller) {
+                return Text(
+                  stationType ? controller.startStation : controller.endStation,
+                  style: TextStyle(
+                    fontSize: 40,
+                  ),
+                );
+              }
+            )
+          ],
+        ),
       ),
     );
   }
