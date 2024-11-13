@@ -4,7 +4,13 @@
 ## 프로젝트 소개
 아래의 기능들이 있는 기차 예매 서비스 앱
 
-<br></br>
+<br>
+
+<p>HomePage</p><img src='docs/home_page.png' height='400'><br><br>
+<p>StationListPage</p><img src='docs/station_list_page.png' height='400'><br><br>
+<p>SeatPage</p><img src='docs/seat_page.png' height='400'><br><br>
+
+<br>
 
 < 필수 기능 > 
 1. UI 명세서를 정확하게 반영
