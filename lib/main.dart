@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/SeatPage', page: () => SeatPage()),
       ],
       initialBinding: BindingsBuilder(() {
-        Get.lazyPut<StationListController>(()=> StationListController());
-        Get.lazyPut<SeatController>(()=> SeatController());
+        Get.put(StationListController());
+        Get.put(SeatController());
       }),
       home: const HomePage(),
     );

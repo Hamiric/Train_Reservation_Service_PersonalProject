@@ -14,4 +14,12 @@ class SeatController extends GetxController{
     readyReservation = true;
     update();
   }
+
+  void reset(){
+    selectedcol = -1;
+    selectedrow = -1;
+
+    readyReservation = false;
+    // update();
+  }
 }

@@ -23,4 +23,13 @@ class StationListController extends GetxController {
     }
     update();
   }
+
+  void reset(){
+    startStation = '선택';
+    endStation = '선택';
+
+    changedstart = false;
+    changedend = false;
+    update();
+  }
 }
