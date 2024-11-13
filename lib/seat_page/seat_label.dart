@@ -24,7 +24,6 @@ class SeatLabel extends StatelessWidget {
           ),
           Text(
             '선택됨',
-            style: Theme.of(context).textTheme.labelSmall,
           ),
           SizedBox(
             width: 20,
@@ -42,7 +41,6 @@ class SeatLabel extends StatelessWidget {
           ),
           Text(
             '선택안됨',
-            style: Theme.of(context).textTheme.labelSmall,
           ),
           Spacer(),
         ],

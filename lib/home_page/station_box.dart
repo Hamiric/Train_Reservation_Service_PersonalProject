@@ -32,7 +32,7 @@ class StationBox extends StatelessWidget {
     );
   }
 
-  Widget station(bool stationType, BuildContext context){
+  Widget station(bool stationType, BuildContext context) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
@@ -50,14 +50,14 @@ class StationBox extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            GetBuilder<StationListController>(
-              builder: (controller) {
-                return Text(
+            GetBuilder<StationListController>(builder: (controller) {
+              return Text(
                   stationType ? controller.startStation : controller.endStation,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                );
-              }
-            )
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Theme.of(context).colorScheme.brightness == Brightness.light ? null : Colors.white,
+                  ));
+            })
           ],
         ),
       ),

@@ -7,14 +7,6 @@ final lightTheme = ThemeData(
     secondary: Colors.white,
     brightness: Brightness.light,
   ),
-  textTheme: TextTheme(
-    labelSmall: TextStyle(
-      fontSize: 16,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 40,
-    )
-  ),
   dividerColor: Colors.grey[400],
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
@@ -32,15 +24,6 @@ final darkTheme = ThemeData(
     seedColor: Colors.pinkAccent,
     secondary: Colors.grey[800],
     brightness: Brightness.dark,
-  ),
-  textTheme: TextTheme(
-    labelSmall: TextStyle(
-      fontSize: 16,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 40,
-      color: Colors.white,
-    )
   ),
   dividerColor: Colors.white,
   elevatedButtonTheme: ElevatedButtonThemeData(
