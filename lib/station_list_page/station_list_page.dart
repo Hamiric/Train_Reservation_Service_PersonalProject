@@ -22,6 +22,11 @@ class StationListPage extends StatelessWidget {
                     ? controller.stationName.length - 1
                     : controller.stationName.length, (index) {
               int visibleIndex = index;
+
+              // index번째 반복중일때, 스킵하고 싶은 목록의 Index를 넘는 visibleIndex를 설정하는 로직
+              // 예를 들면, 0 ~ 3 의 목록중 2를 뛰어넘고자 할때,
+              // index가 0 ~ 3 이면, visibleIndex는 0,1,3 이 출력
+              // (뛰어 넘는다 했을때 index는 itemCount값이 -1이 되어 개수가 하나 줄음)
               if (controller.checkOppositionList) {
                 if (controller.stationtype) {
                   visibleIndex = index >= controller.selectedEndStationIndex
@@ -34,14 +39,6 @@ class StationListPage extends StatelessWidget {
                 }
               }
 
-              if (visibleIndex == controller.selectedEndStationIndex &&
-                  controller.stationtype) {
-                return const SizedBox.shrink();
-              } else if (visibleIndex == controller.selectedStartStationIndex &&
-                  !controller.stationtype) {
-                return const SizedBox.shrink();
-              }
-              
               return stationList(
                   controller.stationName[visibleIndex], visibleIndex);
             }),
