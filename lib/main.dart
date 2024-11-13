@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/seat_controller.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
 
-import 'package:train_reservation_service/home_page/homepage.dart';
-import 'package:train_reservation_service/seat_page/seatpage.dart';
+import 'package:train_reservation_service/home_page/home_page.dart';
+import 'package:train_reservation_service/seat_page/seat_page.dart';
 import 'package:train_reservation_service/station_list_page/station_list_page.dart';
 import 'package:train_reservation_service/theme.dart';
 
