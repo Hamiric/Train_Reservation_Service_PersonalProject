@@ -6,9 +6,9 @@
 
 <br>
 
-<p>HomePage</p><img src='docs/home_page.png' height='400'><br><br>
-<p>StationListPage</p><img src='docs/station_list_page.png' height='400'><br><br>
-<p>SeatPage</p><img src='docs/seat_page.png' height='400'><br><br>
+| HomePage | StationListPage | SeatPage |
+| --- | --- | --- |
+| <img src='docs/home_page.png'> | <img src='docs/station_list_page.png'> | <img src='docs/seat_page.png'> |
 
 <br>
 
@@ -41,6 +41,7 @@
 #### < 자유 구현 >
 >* UX - 사용자가 테마 바꾸게 하기 : 
 <br>사용자가 상호작용을 통해 테마를 light - dark 로 바꿀 수 있게 하는 기능<br><br>
+>* 
 
 ## 🚨 Trouble Shooting
 
