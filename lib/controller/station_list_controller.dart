@@ -10,7 +10,7 @@ class StationListController extends GetxController {
 
   void setStationType(bool type) {
     stationtype = type;
-    update();
+    // update();
   }
 
   void setStation(String station) {
