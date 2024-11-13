@@ -3,52 +3,64 @@ import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
 
 class StationListPage extends StatelessWidget {
-  StationListPage({super.key});
-
-  final List<String> stationName = [
-    '수서',
-    '동탄',
-    '평택지제',
-    '천안아산',
-    '오송',
-    '대전',
-    '김천구미',
-    '동대구',
-    '경주',
-    '울산',
-    '부산'
-  ];
+  const StationListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: GetBuilder<StationListController>(
-          builder: (controller) {
-            return controller.stationtype ? Text('출발역') : Text('도착역');
-          }
-        ),
+        title: GetBuilder<StationListController>(builder: (controller) {
+          return controller.stationtype ? Text('출발역') : Text('도착역');
+        }),
       ),
-      body: ListView.builder(
-        itemCount: stationName.length,
-        itemBuilder: (BuildContext context, int index) {
-        return stationList(stationName[index]);
+      body: GetBuilder<StationListController>(builder: (controller) {
+        return ListView(
+          children: [
+            ...List.generate(
+                controller.checkOppositionList
+                    ? controller.stationName.length - 1
+                    : controller.stationName.length, (index) {
+              int visibleIndex = index;
+              if (controller.checkOppositionList) {
+                if (controller.stationtype) {
+                  visibleIndex = index >= controller.selectedEndStationIndex
+                      ? index + 1
+                      : index;
+                } else {
+                  visibleIndex = index >= controller.selectedStartStationIndex
+                      ? index + 1
+                      : index;
+                }
+              }
+
+              if (visibleIndex == controller.selectedEndStationIndex &&
+                  controller.stationtype) {
+                return const SizedBox.shrink();
+              } else if (visibleIndex == controller.selectedStartStationIndex &&
+                  !controller.stationtype) {
+                return const SizedBox.shrink();
+              }
+              
+              return stationList(
+                  controller.stationName[visibleIndex], visibleIndex);
+            }),
+          ],
+        );
       }),
     );
   }
 
-  Widget stationList(String station) {
+  Widget stationList(String station, int index) {
     return GestureDetector(
       onTap: () {
-        Get.find<StationListController>().setStation(station);
+        Get.find<StationListController>().setStation(station, index);
         Get.back();
       },
       child: Container(
         height: 50,
         decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey[300]!))
-        ),
+            border: Border(bottom: BorderSide(color: Colors.grey[300]!))),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Align(
