@@ -22,7 +22,7 @@
 1. UX를 고려한 (같은 역 선택 불가) 기능
 2. 다크 테마 적용
 3. 자유 구현
-
+    
 ## 적용 기능
 #### < 필수 기능 >
 >* UI 명세서를 정확하게 반영 : 
@@ -39,8 +39,8 @@
 >* 다크 테마 적용 :
 <br>앱 전체에 적용되는 다크 테마를 적용하기
 #### < 자유 구현 >
->* -- : 
-<br>--<br><br>
+>* UX - 사용자가 테마 바꾸게 하기 : 
+<br>사용자가 상호작용을 통해 테마를 light - dark 로 바꿀 수 있게 하는 기능<br><br>
 
 ## 🚨 Trouble Shooting
 
@@ -49,6 +49,16 @@
 <div markdown="1">
 
 ### [GetX Controller](https://hamiric.tistory.com/53)
+
+ <br>
+</div>
+</details>
+
+<details>
+<summary>✏️ [ GetX로 테마관리 하기 / GetX 사용 후기 ]</summary>
+<div markdown="1">
+
+### [GetX Controller](https://hamiric.tistory.com/54)
 
  <br>
 </div>
