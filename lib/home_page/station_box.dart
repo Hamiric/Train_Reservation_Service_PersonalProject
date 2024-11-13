@@ -13,25 +13,26 @@ class StationBox extends StatelessWidget {
     return Container(
       height: 200,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.secondary,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         children: [
-          station(START_STATION),
+          station(START_STATION, context),
           SizedBox(
             height: 50,
             child: VerticalDivider(
               thickness: 2,
+              color: Theme.of(context).dividerColor,
             ),
           ),
-          station(END_STATION),
+          station(END_STATION, context),
         ],
       ),
     );
   }
 
-  Widget station(bool stationType){
+  Widget station(bool stationType, BuildContext context){
     return Expanded(
       child: GestureDetector(
         onTap: () {
@@ -53,9 +54,7 @@ class StationBox extends StatelessWidget {
               builder: (controller) {
                 return Text(
                   stationType ? controller.startStation : controller.endStation,
-                  style: TextStyle(
-                    fontSize: 40,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 );
               }
             )

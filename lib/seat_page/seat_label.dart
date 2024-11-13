@@ -19,9 +19,16 @@ class SeatLabel extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
           ),
-          SizedBox(width: 4,),
-          Text('선택됨'),
-          SizedBox(width: 20,),
+          SizedBox(
+            width: 4,
+          ),
+          Text(
+            '선택됨',
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          SizedBox(
+            width: 20,
+          ),
           Container(
             width: 24,
             height: 24,
@@ -30,8 +37,13 @@ class SeatLabel extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
           ),
-          SizedBox(width: 4,),
-          Text('선택안됨'),
+          SizedBox(
+            width: 4,
+          ),
+          Text(
+            '선택안됨',
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
           Spacer(),
         ],
       ),

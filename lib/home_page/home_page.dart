@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: Text('기차 예매'),
       ),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.light ? Colors.grey[200] : Color(0xff121212),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

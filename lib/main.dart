@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Train Reservation Service App',
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: lightTheme,
+      darkTheme: darkTheme,
       getPages: [
         GetPage(name: '/HomePage', page: () => HomePage()),
         GetPage(name: '/StationListPage', page: () => StationListPage()),
