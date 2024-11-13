@@ -50,5 +50,8 @@
 
 ## 📝Technologies & Tools (FE)
 
-![Dart Version](https://img.shields.io/badge/Dart-3.5.4-brightgreen)
-![VSCode Version](https://img.shields.io/badge/VSCode-1.95.0-blue)
+![Dart Version](https://img.shields.io/badge/Dart-3.5.4-brightgreen)<br>
+![Flutter Version](https://img.shields.io/badge/Flutter-3.24.4-blue)<br>
+![VSCode Version](https://img.shields.io/badge/VSCode-1.95.0-1E1E1E)<br>
+![GetX Version](https://img.shields.io/badge/GetX-4.6.6-purple)<br>
+![Git Version](https://img.shields.io/badge/Git-2.35.3-orange)<br>
