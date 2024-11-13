@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:train_reservation_service/controller/theme_controller.dart';
 import 'package:train_reservation_service/seat_page/reservation_button.dart';
 import 'package:train_reservation_service/seat_page/row_number_label.dart';
 import 'package:train_reservation_service/seat_page/seat_label.dart';
@@ -14,6 +16,17 @@ class SeatPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('좌석 선택'),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Get.find<ThemeController>().changeThemeMode();
+            },
+            child: Icon(
+              Theme.of(context).colorScheme.brightness == Brightness.light ? Icons.mode_night : Icons.sunny,
+            )
+          ),
+          SizedBox(width: 20,),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

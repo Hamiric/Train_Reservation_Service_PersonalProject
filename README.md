@@ -45,10 +45,10 @@
 ## 🚨 Trouble Shooting
 
 <details>
-<summary>📚[--]</summary>
+<summary>📚[ GetXController 종속성 관리 및 LifeCycle관련 이슈 ]</summary>
 <div markdown="1">
 
-### [--](https://hamiric.tistory.com/)
+### [GetX Controller](https://hamiric.tistory.com/53)
 
  <br>
 </div>

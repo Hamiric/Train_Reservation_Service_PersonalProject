@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
+import 'package:train_reservation_service/controller/theme_controller.dart';
 
 class StationListPage extends StatelessWidget {
   const StationListPage({super.key});
@@ -13,6 +14,20 @@ class StationListPage extends StatelessWidget {
         title: GetBuilder<StationListController>(builder: (controller) {
           return controller.stationtype ? Text('출발역') : Text('도착역');
         }),
+        actions: [
+          GestureDetector(
+              onTap: () {
+                Get.find<ThemeController>().changeThemeMode();
+              },
+              child: Icon(
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? Icons.mode_night
+                    : Icons.sunny,
+              )),
+          SizedBox(
+            width: 20,
+          ),
+        ],
       ),
       body: GetBuilder<StationListController>(builder: (controller) {
         return ListView(
