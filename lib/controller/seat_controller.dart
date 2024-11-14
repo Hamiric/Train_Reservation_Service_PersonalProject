@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 class SeatController extends GetxController {
   // 예약된 좌석
-  // key : s-eStation, value : {key : col, value : row}
-  Map<String, Map<int, int>> alreadyResevationSeat = {};
+  // [String, int, int] 형태의 데이터
+  List<dynamic> alreadyResevationSeat = [];
 
   late String startendStation;
 
@@ -44,8 +44,7 @@ class SeatController extends GetxController {
   // HomePage로 돌아갈때, 해당 값들은 HomePage에서 사용하지 않으므로, Update 필요 없음
   // (추가) 예매한 좌석 저장
   void reset() {
-    alreadyResevationSeat[startendStation] ??= {};
-    alreadyResevationSeat[startendStation]![selectedcol] = selectedrow;
+    alreadyResevationSeat.add([startendStation, selectedcol, selectedrow]);
 
     selectedcol = -1;
     selectedrow = -1;
@@ -56,14 +55,14 @@ class SeatController extends GetxController {
 
   // 좌석이 이미 예약되었는지 아닌지 판별하는 로직
   bool isAlreadyReservation(int col, int row) {
-    // startendStation key값이 있을 경우
-    if (alreadyResevationSeat[startendStation] != null) {
-      Map<int, int> tem = alreadyResevationSeat[startendStation] ?? {};
-
-      if (tem[col] == row) {
+    for (int i = 0; i < alreadyResevationSeat.length; i++) {
+      if (alreadyResevationSeat[i][0] == startendStation &&
+          alreadyResevationSeat[i][1] == col &&
+          alreadyResevationSeat[i][2] == row) {
         return true;
       }
     }
+
     return false;
   }
 }
