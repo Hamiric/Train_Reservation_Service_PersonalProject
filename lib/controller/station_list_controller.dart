@@ -72,6 +72,31 @@ class StationListController extends GetxController {
     update();
   }
 
+  // 출발역과 도착역을 버튼 하나로 바꿔주는 로직
+  // HomePage UI가 즉각적으로 업데이트 되어야 하므로 Update필요
+  void swapStation(){
+    String tmpstation;
+    int tmpselectedStationIndex;
+    bool tmpchanged;
+
+    // startStaion <스왑> endStation
+    tmpstation = startStation;
+    startStation = endStation;
+    endStation = tmpstation;
+
+    // selectedStartStationIndex <스왑> selectedEndStationIndex
+    tmpselectedStationIndex = selectedStartStationIndex;
+    selectedStartStationIndex = selectedEndStationIndex;
+    selectedEndStationIndex = tmpselectedStationIndex;
+
+    // changedstart <스왑> changedend
+    tmpchanged = changedstart;
+    changedstart = changedend;
+    changedend = tmpchanged;
+
+    update();
+  }
+
   // SeatPage의 ReservationButton에서 확인 버튼을 눌렀을경우 작동하는 로직
   // Controller에 설정된 값들 초기화
   // HomePage로 돌아갈때, Station부분은 UI업데이트가 필요하기 때문에 Update필요

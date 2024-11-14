@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:train_reservation_service/controller/station_list_controller.dart';
 import 'package:train_reservation_service/controller/theme_controller.dart';
 import 'package:train_reservation_service/home_page/seat_selection_button.dart';
 import 'package:train_reservation_service/home_page/station_box.dart';
@@ -39,6 +40,16 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // 출발역-도착역을 스왑해주는 버튼
+            IconButton(
+              onPressed: () {
+                Get.find<StationListController>().swapStation();
+              },
+              icon: Icon(
+                Icons.swap_horiz,
+                size: 40,
+              )
+            ),
             // 출발역, 도착역을 감싸고 있는 박스
             StationBox(),
             SizedBox(
@@ -46,6 +57,10 @@ class HomePage extends StatelessWidget {
             ),
             // 좌석 선택 버튼
             SeatSelectionButton(),
+            // IconButton 크기 만큼 SizedBox 만들어서 중앙 맞추기
+            SizedBox(
+              height: 56,
+            )
           ],
         ),
       ),
