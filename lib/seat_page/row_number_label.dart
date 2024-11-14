@@ -14,7 +14,6 @@ class RowNumberLabel extends StatelessWidget {
         SizedBox(width: 4,),
         SizedBox(
           width: 50,
-          height: 50,
         ),
         SizedBox(width: 4,),
         labelBox('C'),

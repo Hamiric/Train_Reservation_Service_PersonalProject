@@ -42,6 +42,23 @@ class SeatLabel extends StatelessWidget {
           Text(
             '선택안됨',
           ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: Colors.blue[200],
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          SizedBox(
+            width: 4,
+          ),
+          Text(
+            '예매됨'
+          ),
           Spacer(),
         ],
       ),
