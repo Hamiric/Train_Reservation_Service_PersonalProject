@@ -41,7 +41,8 @@
 #### < 자유 구현 >
 >* UX - 사용자가 테마 바꾸게 하기 : 
 <br>사용자가 상호작용을 통해 테마를 light - dark 로 바꿀 수 있게 하는 기능<br><br>
->* 
+>* 예매한 좌석은 예매할 수 없도록 하는 기능 :
+<br>한번 예매가 들어간 좌석은 다음 차례에 예매할 때, 더이상 예매가 안되도록 하는 기능.
 
 ## 🚨 Trouble Shooting
 
@@ -49,7 +50,7 @@
 <summary>📚[ GetXController 종속성 관리 및 LifeCycle관련 이슈 ]</summary>
 <div markdown="1">
 
-### [ GetXController ](https://hamiric.tistory.com/53)
+### [ TIL - GetXController ](https://hamiric.tistory.com/53)
 
  <br>
 </div>
@@ -59,17 +60,17 @@
 <summary>✏️ [ GetX로 테마관리 하기 / GetX 사용 후기 ]</summary>
 <div markdown="1">
 
-### [ GetX 사용 후기 ](https://hamiric.tistory.com/54)
+### [ TIL - GetX 사용 후기 ](https://hamiric.tistory.com/54)
 
  <br>
 </div>
 </details>
 
 <details>
-<summary>✏️ [ On Scroll Change AppBar Color Issue ]</summary>
+<summary>💥 [ On Scroll Change AppBar Color Issue ]</summary>
 <div markdown="1">
 
-### [ 스크롤시 앱바 색상 변경되는 이슈 ](https://hamiric.tistory.com/55)
+### [ TIL - 스크롤시 앱바 색상 변경되는 이슈 ](https://hamiric.tistory.com/55)
 
  <br>
 </div>
