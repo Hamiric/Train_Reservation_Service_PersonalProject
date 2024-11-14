@@ -18,7 +18,9 @@ class StationBox extends StatelessWidget {
       ),
       child: Row(
         children: [
+          // 출발역
           station(START_STATION, context),
+          // 세로선
           SizedBox(
             height: 50,
             child: VerticalDivider(
@@ -26,6 +28,7 @@ class StationBox extends StatelessWidget {
               color: Theme.of(context).dividerColor,
             ),
           ),
+          // 도착역
           station(END_STATION, context),
         ],
       ),
@@ -34,6 +37,9 @@ class StationBox extends StatelessWidget {
 
   Widget station(bool stationType, BuildContext context) {
     return Expanded(
+      // 각 Text위젯을 클릭하면
+      // StationListController에 출발역/도착역 데이터를 전달하고
+      // StationListPage로 이동
       child: GestureDetector(
         onTap: () {
           Get.find<StationListController>().setStationType(stationType);
@@ -50,6 +56,8 @@ class StationBox extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            // StationListController에 저장되어있는 station값을 읽어서 text에 반영
+            // default text는 '선택'
             GetBuilder<StationListController>(builder: (controller) {
               return Text(
                   stationType ? controller.startStation : controller.endStation,

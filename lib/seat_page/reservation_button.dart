@@ -12,6 +12,8 @@ class ReservationButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: GetBuilder<SeatController>(builder: (controller) {
+        // 예매하기 버튼 누를시
+        // CupertinoDialog 출력
         return ElevatedButton(
             onPressed: () {
               if (controller.readyReservation) {
@@ -35,6 +37,9 @@ class ReservationButton extends StatelessWidget {
     );
   }
 
+  // content로 좌석 번호 출력 ( 세로줄 - 가로줄 >>예시>> 2 - B )
+  // 취소 누를 경우 팝업창만 닫기
+  // 확인 누를 경우, HomePage로 돌아가면서, 데이터 초기화
   Widget popUpWindow(BuildContext context) {
     return CupertinoAlertDialog(
       title: const Text('예매 하시겠습니까?'),

@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: Text('기차 예매'),
         actions: [
+          // 테마 모드 변경을 위한 아이콘 추가
           GestureDetector(
             onTap: () {
               Get.find<ThemeController>().changeThemeMode();
@@ -31,8 +32,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // 출발역, 도착역을 감싸고 있는 박스
             StationBox(),
             SizedBox(height: 20,),
+            // 좌석 선택 버튼
             SeatSelectionButton(),
           ],
         ),

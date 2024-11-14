@@ -15,6 +15,7 @@ class StationListPage extends StatelessWidget {
           return controller.stationtype ? Text('출발역') : Text('도착역');
         }),
         actions: [
+          // 테마 모드 변경을 위한 아이콘 추가
           GestureDetector(
               onTap: () {
                 Get.find<ThemeController>().changeThemeMode();
@@ -33,6 +34,9 @@ class StationListPage extends StatelessWidget {
         return ListView(
           children: [
             ...List.generate(
+              // ItemCount 설정시
+              // 반대역을 이미 설정한 경우, 선택된 반대역은 출력이 되지 않아야 한다.
+              // 즉, 해당 경우 목록개수가 -1이 되고, 이외의 경우는 목록개수는 그대로
                 controller.checkOppositionList
                     ? controller.stationName.length - 1
                     : controller.stationName.length, (index) {
@@ -64,6 +68,8 @@ class StationListPage extends StatelessWidget {
   }
 
   Widget stationList(String station, int index) {
+    // 리스트 목록 터치시, station과 index값을 StationListController에 전달
+    // 이후, SationListPage 종료
     return GestureDetector(
       onTap: () {
         Get.find<StationListController>().setStation(station, index);

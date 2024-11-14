@@ -7,6 +7,7 @@ class SeatSelectionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // 출발역, 도착역이 둘다 선택되어 있는 경우에만 버튼 작동
     return GetBuilder<StationListController>(builder: (controller) {
       return ElevatedButton(
           onPressed: () {

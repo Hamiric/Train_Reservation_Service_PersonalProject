@@ -17,8 +17,9 @@ class SeatPage extends StatelessWidget {
         centerTitle: true,
         title: Text('좌석 선택'),
         backgroundColor: Colors.transparent,
-        // scrolledUnderElevation: 0,
+        scrolledUnderElevation: 0,
         actions: [
+          // 테마 모드 변경을 위한 아이콘 추가
           GestureDetector(
               onTap: () {
                 Get.find<ThemeController>().changeThemeMode();
@@ -38,10 +39,13 @@ class SeatPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            // 출발역, 도착역
             TrainRouteBox(),
+            // 좌석 상태 박스
             SeatLabel(),
-            RowNumberLabel(),
+            // 좌석들
             Seats(),
+            // 예매하기 버튼
             ReservationButton(),
             SizedBox(
               height: 30,

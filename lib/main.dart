@@ -10,6 +10,7 @@ import 'package:train_reservation_service/station_list_page/station_list_page.da
 import 'package:train_reservation_service/theme.dart';
 
 void main() {
+  // 테마를 적용하기 위해 runApp전에 ThemeController 생성
   Get.put(ThemeController());
   runApp(const MyApp());
 }
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           title: 'Train Reservation Service App',
           debugShowCheckedModeBanner: false,
+          // 테마 모드
+          // light테마(default), dark테마
           themeMode: controller.themeMode,
           theme: lightTheme,
           darkTheme: darkTheme,
@@ -32,6 +35,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: '/StationListPage', page: () => StationListPage()),
             GetPage(name: '/SeatPage', page: () => SeatPage()),
           ],
+          // StationListController, SeatController 생성
           initialBinding: BindingsBuilder(() {
             Get.put(StationListController());
             Get.put(SeatController());
