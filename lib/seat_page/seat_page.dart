@@ -19,17 +19,18 @@ class SeatPage extends StatelessWidget {
         scrolledUnderElevation: 0,
         actions: [
           // 테마 모드 변경을 위한 아이콘 추가
-          GestureDetector(
-              onTap: () {
-                Get.find<ThemeController>().changeThemeMode();
-              },
-              child: Icon(
-                Theme.of(context).colorScheme.brightness == Brightness.light
-                    ? Icons.mode_night
-                    : Icons.sunny,
-              )),
+          IconButton(
+            onPressed: () {
+              Get.find<ThemeController>().changeThemeMode();
+            },
+            icon: Icon(
+              Theme.of(context).colorScheme.brightness == Brightness.light
+                  ? Icons.mode_night
+                  : Icons.sunny,
+            ),
+          ),
           SizedBox(
-            width: 20,
+            width: 10,
           ),
         ],
       ),

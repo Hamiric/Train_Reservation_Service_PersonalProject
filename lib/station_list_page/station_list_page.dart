@@ -16,17 +16,18 @@ class StationListPage extends StatelessWidget {
         }),
         actions: [
           // 테마 모드 변경을 위한 아이콘 추가
-          GestureDetector(
-              onTap: () {
-                Get.find<ThemeController>().changeThemeMode();
-              },
-              child: Icon(
-                Theme.of(context).colorScheme.brightness == Brightness.light
-                    ? Icons.mode_night
-                    : Icons.sunny,
-              )),
+          IconButton(
+            onPressed: () {
+              Get.find<ThemeController>().changeThemeMode();
+            },
+            icon: Icon(
+              Theme.of(context).colorScheme.brightness == Brightness.light
+                  ? Icons.mode_night
+                  : Icons.sunny,
+            ),
+          ),
           SizedBox(
-            width: 20,
+            width: 10,
           ),
         ],
       ),
@@ -34,9 +35,9 @@ class StationListPage extends StatelessWidget {
         return ListView(
           children: [
             ...List.generate(
-              // ItemCount 설정시
-              // 반대역을 이미 설정한 경우, 선택된 반대역은 출력이 되지 않아야 한다.
-              // 즉, 해당 경우 목록개수가 -1이 되고, 이외의 경우는 목록개수는 그대로
+                // ItemCount 설정시
+                // 반대역을 이미 설정한 경우, 선택된 반대역은 출력이 되지 않아야 한다.
+                // 즉, 해당 경우 목록개수가 -1이 되고, 이외의 경우는 목록개수는 그대로
                 controller.checkOppositionList
                     ? controller.stationName.length - 1
                     : controller.stationName.length, (index) {

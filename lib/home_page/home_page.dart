@@ -15,18 +15,25 @@ class HomePage extends StatelessWidget {
         title: Text('기차 예매'),
         actions: [
           // 테마 모드 변경을 위한 아이콘 추가
-          GestureDetector(
-            onTap: () {
+          IconButton(
+            onPressed: () {
               Get.find<ThemeController>().changeThemeMode();
             },
-            child: Icon(
-              Theme.of(context).colorScheme.brightness == Brightness.light ? Icons.mode_night : Icons.sunny,
-            )
+            icon: Icon(
+              Theme.of(context).colorScheme.brightness == Brightness.light
+                  ? Icons.mode_night
+                  : Icons.sunny,
+            ),
           ),
-          SizedBox(width: 20,),
+          SizedBox(
+            width: 10,
+          ),
         ],
       ),
-      backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.light ? Colors.grey[200] : Color(0xff121212),
+      backgroundColor:
+          Theme.of(context).colorScheme.brightness == Brightness.light
+              ? Colors.grey[200]
+              : Color(0xff121212),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -34,7 +41,9 @@ class HomePage extends StatelessWidget {
           children: [
             // 출발역, 도착역을 감싸고 있는 박스
             StationBox(),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             // 좌석 선택 버튼
             SeatSelectionButton(),
           ],
