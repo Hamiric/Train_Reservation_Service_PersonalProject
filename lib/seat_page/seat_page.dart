@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/theme_controller.dart';
 import 'package:train_reservation_service/seat_page/reservation_button.dart';
-import 'package:train_reservation_service/seat_page/row_number_label.dart';
 import 'package:train_reservation_service/seat_page/seat_label.dart';
 import 'package:train_reservation_service/seat_page/seats.dart';
 import 'package:train_reservation_service/seat_page/train_route_box.dart';

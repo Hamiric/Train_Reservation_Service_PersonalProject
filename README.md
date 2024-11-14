@@ -65,10 +65,22 @@
 </div>
 </details>
 
+<details>
+<summary>✏️ [ On Scroll Change AppBar Color Issue ]</summary>
+<div markdown="1">
+
+### [ 스크롤시 앱바 색상 변경되는 이슈 ](https://hamiric.tistory.com/55)
+
+ <br>
+</div>
+</details>
+
 ## 📝Technologies & Tools (FE)
 
-![Dart Version](https://img.shields.io/badge/Dart-3.5.4-brightgreen)<br>
-![Flutter Version](https://img.shields.io/badge/Flutter-3.24.4-blue)<br>
-![VSCode Version](https://img.shields.io/badge/VSCode-1.95.0-1E1E1E)<br>
-![GetX Version](https://img.shields.io/badge/GetX-4.6.6-purple)<br>
-![Git Version](https://img.shields.io/badge/Git-2.35.3-orange)<br>
+| 기술스택 | 배지 |
+| --- | --- |
+| Language | ![Dart Version](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=Dart&logoColor=white) |
+| Framework | ![Flutter Version](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white) |
+| Code Editor | ![VSCode Version](https://img.shields.io/badge/VSCode-0175C2?style=flat-square) |
+| Library | ![GetX Version](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square&logo=GetX&logoColor=white) |
+| Version Control | ![Git Version](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white) ![GitHub Version](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |
