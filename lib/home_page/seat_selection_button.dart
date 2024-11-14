@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:train_reservation_service/controller/seat_controller.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
 
 class SeatSelectionButton extends StatelessWidget {
@@ -13,6 +14,7 @@ class SeatSelectionButton extends StatelessWidget {
           onPressed: () {
             if (controller.changedstart && controller.changedend) {
               Get.toNamed('/SeatPage');
+              Get.find<SeatController>().setStation(controller.startStation, controller.endStation);
             }
           },
           child: Center(
