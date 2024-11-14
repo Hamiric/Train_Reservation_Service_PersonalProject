@@ -49,7 +49,7 @@
 <summary>📚[ GetXController 종속성 관리 및 LifeCycle관련 이슈 ]</summary>
 <div markdown="1">
 
-### [GetX Controller](https://hamiric.tistory.com/53)
+### [ GetXController ](https://hamiric.tistory.com/53)
 
  <br>
 </div>
@@ -59,7 +59,7 @@
 <summary>✏️ [ GetX로 테마관리 하기 / GetX 사용 후기 ]</summary>
 <div markdown="1">
 
-### [GetX Controller](https://hamiric.tistory.com/54)
+### [ GetX 사용 후기 ](https://hamiric.tistory.com/54)
 
  <br>
 </div>

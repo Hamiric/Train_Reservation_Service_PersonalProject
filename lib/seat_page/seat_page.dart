@@ -16,16 +16,21 @@ class SeatPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('좌석 선택'),
+        backgroundColor: Colors.transparent,
+        // scrolledUnderElevation: 0,
         actions: [
           GestureDetector(
-            onTap: () {
-              Get.find<ThemeController>().changeThemeMode();
-            },
-            child: Icon(
-              Theme.of(context).colorScheme.brightness == Brightness.light ? Icons.mode_night : Icons.sunny,
-            )
+              onTap: () {
+                Get.find<ThemeController>().changeThemeMode();
+              },
+              child: Icon(
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? Icons.mode_night
+                    : Icons.sunny,
+              )),
+          SizedBox(
+            width: 20,
           ),
-          SizedBox(width: 20,),
         ],
       ),
       body: Padding(
@@ -38,7 +43,9 @@ class SeatPage extends StatelessWidget {
             RowNumberLabel(),
             Seats(),
             ReservationButton(),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),
