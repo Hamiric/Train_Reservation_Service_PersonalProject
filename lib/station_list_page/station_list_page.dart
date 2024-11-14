@@ -33,6 +33,7 @@ class StationListPage extends StatelessWidget {
       ),
       body: GetBuilder<StationListController>(builder: (controller) {
         return ListView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             ...List.generate(
                 // ItemCount 설정시
