@@ -85,5 +85,5 @@
 | Language | ![Dart Version](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=Dart&logoColor=white) |
 | Framework | ![Flutter Version](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white) |
 | Code Editor | ![VSCode Version](https://img.shields.io/badge/VSCode-0175C2?style=flat-square) |
-| Library | ![GetX Version](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square&logo=GetX&logoColor=white) |
+| Library | ![GetX Version](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square&logo=GetX&logoColor=white) ![Logger Version](https://img.shields.io/badge/Logger-green?style=flat-square) | |
 | Version Control | ![Git Version](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white) ![GitHub Version](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |

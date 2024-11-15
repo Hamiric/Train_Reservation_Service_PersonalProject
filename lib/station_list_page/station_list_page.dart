@@ -67,7 +67,7 @@ class StationListPage extends StatelessWidget {
 
               // (사담) 어플 테스트 및 코드 검토해보면서 생각해보니..
               // ItemCount 안건들이고, 비워야할 index에서 shrink() 리턴해 주면 훨씬 편하고, 리소스도 적게 드는게 아닌가
-              // 라는 생각을 했지만, 위의 코드를 적는데 들인 수고 및 시간이 아까워서 놔둠.
+              // 라는 생각을 했지만, 위의 코드를 적는데 들인 수고 및 시간이 아까워서 놔둠...
               return stationList(
                   controller.stationName[visibleIndex], visibleIndex);
             }),
