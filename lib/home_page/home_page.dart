@@ -4,6 +4,7 @@ import 'package:train_reservation_service/controller/station_list_controller.dar
 import 'package:train_reservation_service/controller/theme_controller.dart';
 import 'package:train_reservation_service/home_page/seat_selection_button.dart';
 import 'package:train_reservation_service/home_page/station_box.dart';
+import 'package:train_reservation_service/logger.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
               try {
                 Get.find<ThemeController>().changeThemeMode();
               } catch (e) {
-                print('테마모드 변경 버튼 오류\n$e');
+                logger.e('테마모드 변경 버튼 오류');
               }
             },
             icon: Icon(
@@ -50,7 +51,7 @@ class HomePage extends StatelessWidget {
                   try {
                     Get.find<StationListController>().swapStation();
                   } catch (e) {
-                    print('출발역-도착역 스왑버튼 오류\n$e');
+                    logger.e('출발역-도착역 스왑버튼 오류');
                   }
                 },
                 icon: Icon(

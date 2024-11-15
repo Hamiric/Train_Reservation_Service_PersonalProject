@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
 import 'package:train_reservation_service/controller/theme_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 
 class StationListPage extends StatelessWidget {
   const StationListPage({super.key});
@@ -21,7 +22,7 @@ class StationListPage extends StatelessWidget {
               try {
                 Get.find<ThemeController>().changeThemeMode();
               } catch (e) {
-                print('테마모드 변경 버튼 오류\n$e');
+                logger.e('테마모드 변경 버튼 오류');
               }
             },
             icon: Icon(
@@ -85,7 +86,7 @@ class StationListPage extends StatelessWidget {
           Get.find<StationListController>().setStation(station, index);
           Get.back();
         } catch (e) {
-          print('리스트 목록 터치시 오류\n$e');
+          logger.e('리스트 목록 터치시 오류');
         }
       },
       child: Container(

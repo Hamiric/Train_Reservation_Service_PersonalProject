@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/seat_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 import 'package:train_reservation_service/seat_page/row_number_label.dart';
 
 class Seats extends StatelessWidget {
@@ -73,7 +74,7 @@ class Seats extends StatelessWidget {
               Get.find<SeatController>().setSeat(col, row);
             }
           } catch (e) {
-            print('좌석 클릭시 오류\n$e');
+            logger.e('좌석 클릭시 오류');
           }
         },
         child: Container(

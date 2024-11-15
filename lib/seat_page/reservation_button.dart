@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/seat_controller.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 
 class ReservationButton extends StatelessWidget {
   const ReservationButton({super.key});
@@ -24,7 +25,7 @@ class ReservationButton extends StatelessWidget {
                   );
                 }
               } catch (e) {
-                print('예매하기 팝업 출력 오류\n$e');
+                logger.e('예매하기 팝업 출력 오류');
               }
             },
             child: Padding(
@@ -60,7 +61,7 @@ class ReservationButton extends StatelessWidget {
             try {
               Navigator.pop(context);
             } catch (e) {
-              print('팝업 취소시 오류\n$e');
+              logger.e('팝업 취소시 오류');
             }
           },
         ),
@@ -74,7 +75,7 @@ class ReservationButton extends StatelessWidget {
               Get.find<StationListController>().reset();
               Get.find<SeatController>().reset();
             } catch(e) {
-              print('팝업 확인시 오류\n$e');
+              logger.e('팝업 확인시 오류');
             }
           },
         ),

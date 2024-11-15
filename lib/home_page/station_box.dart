@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 
 class StationBox extends StatelessWidget {
   const StationBox({super.key});
@@ -46,7 +47,7 @@ class StationBox extends StatelessWidget {
             Get.find<StationListController>().setStationType(stationType);
             Get.toNamed('/StationListPage');
           } catch (e) {
-            print('StationListPage이동중 오류\n$e');
+            logger.e('StationListPage이동중 오류');
           }
         },
         child: Column(

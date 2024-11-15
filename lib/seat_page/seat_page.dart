@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/theme_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 import 'package:train_reservation_service/seat_page/reservation_button.dart';
 import 'package:train_reservation_service/seat_page/seat_label.dart';
 import 'package:train_reservation_service/seat_page/seats.dart';
@@ -24,7 +25,7 @@ class SeatPage extends StatelessWidget {
               try {
                 Get.find<ThemeController>().changeThemeMode();
               } catch (e) {
-                print('테마모드 변경 버튼 오류\n$e');
+                logger.e('테마모드 변경 버튼 오류');
               }
             },
             icon: Icon(

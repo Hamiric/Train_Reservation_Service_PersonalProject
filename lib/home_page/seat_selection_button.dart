@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:train_reservation_service/controller/seat_controller.dart';
 import 'package:train_reservation_service/controller/station_list_controller.dart';
+import 'package:train_reservation_service/logger.dart';
 
 class SeatSelectionButton extends StatelessWidget {
   const SeatSelectionButton({super.key});
@@ -19,7 +20,7 @@ class SeatSelectionButton extends StatelessWidget {
                     .setStation(controller.startStation, controller.endStation);
               }
             } catch (e) {
-              print('좌석 선택 버튼 오류\n$e');
+              logger.e('좌석 선택 버튼 오류');
             }
           },
           child: Center(
