@@ -42,8 +42,12 @@ class StationBox extends StatelessWidget {
       // StationListPage로 이동
       child: GestureDetector(
         onTap: () {
-          Get.find<StationListController>().setStationType(stationType);
-          Get.toNamed('/StationListPage');
+          try {
+            Get.find<StationListController>().setStationType(stationType);
+            Get.toNamed('/StationListPage');
+          } catch (e) {
+            print('StationListPage이동중 오류\n$e');
+          }
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +67,10 @@ class StationBox extends StatelessWidget {
                   stationType ? controller.startStation : controller.endStation,
                   style: TextStyle(
                     fontSize: 40,
-                    color: Theme.of(context).colorScheme.brightness == Brightness.light ? null : Colors.white,
+                    color: Theme.of(context).colorScheme.brightness ==
+                            Brightness.light
+                        ? null
+                        : Colors.white,
                   ));
             })
           ],

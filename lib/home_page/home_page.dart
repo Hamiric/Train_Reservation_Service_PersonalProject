@@ -18,7 +18,11 @@ class HomePage extends StatelessWidget {
           // 테마 모드 변경을 위한 아이콘 추가
           IconButton(
             onPressed: () {
-              Get.find<ThemeController>().changeThemeMode();
+              try {
+                Get.find<ThemeController>().changeThemeMode();
+              } catch (e) {
+                print('테마모드 변경 버튼 오류\n$e');
+              }
             },
             icon: Icon(
               Theme.of(context).colorScheme.brightness == Brightness.light
@@ -42,14 +46,17 @@ class HomePage extends StatelessWidget {
           children: [
             // 출발역-도착역을 스왑해주는 버튼
             IconButton(
-              onPressed: () {
-                Get.find<StationListController>().swapStation();
-              },
-              icon: Icon(
-                Icons.swap_horiz,
-                size: 40,
-              )
-            ),
+                onPressed: () {
+                  try {
+                    Get.find<StationListController>().swapStation();
+                  } catch (e) {
+                    print('출발역-도착역 스왑버튼 오류\n$e');
+                  }
+                },
+                icon: Icon(
+                  Icons.swap_horiz,
+                  size: 40,
+                )),
             // 출발역, 도착역을 감싸고 있는 박스
             StationBox(),
             SizedBox(

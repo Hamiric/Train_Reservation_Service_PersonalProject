@@ -18,7 +18,11 @@ class StationListPage extends StatelessWidget {
           // 테마 모드 변경을 위한 아이콘 추가
           IconButton(
             onPressed: () {
-              Get.find<ThemeController>().changeThemeMode();
+              try {
+                Get.find<ThemeController>().changeThemeMode();
+              } catch (e) {
+                print('테마모드 변경 버튼 오류\n$e');
+              }
             },
             icon: Icon(
               Theme.of(context).colorScheme.brightness == Brightness.light
@@ -77,8 +81,12 @@ class StationListPage extends StatelessWidget {
     // 이후, SationListPage 종료
     return GestureDetector(
       onTap: () {
-        Get.find<StationListController>().setStation(station, index);
-        Get.back();
+        try {
+          Get.find<StationListController>().setStation(station, index);
+          Get.back();
+        } catch (e) {
+          print('리스트 목록 터치시 오류\n$e');
+        }
       },
       child: Container(
         height: 50,

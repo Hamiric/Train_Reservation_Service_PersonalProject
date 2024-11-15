@@ -16,11 +16,15 @@ class ReservationButton extends StatelessWidget {
         // CupertinoDialog 출력
         return ElevatedButton(
             onPressed: () {
-              if (controller.readyReservation) {
-                showCupertinoDialog(
-                  context: context,
-                  builder: (BuildContext context) => popUpWindow(context),
-                );
+              try {
+                if (controller.readyReservation) {
+                  showCupertinoDialog(
+                    context: context,
+                    builder: (BuildContext context) => popUpWindow(context),
+                  );
+                }
+              } catch (e) {
+                print('예매하기 팝업 출력 오류\n$e');
               }
             },
             child: Padding(
@@ -53,17 +57,25 @@ class ReservationButton extends StatelessWidget {
           isDestructiveAction: true,
           child: const Text('취소'),
           onPressed: () {
-            Navigator.pop(context);
+            try {
+              Navigator.pop(context);
+            } catch (e) {
+              print('팝업 취소시 오류\n$e');
+            }
           },
         ),
         CupertinoDialogAction(
           isDefaultAction: true,
           child: const Text('확인'),
           onPressed: () {
-            Navigator.pop(context);
-            Get.back();
-            Get.find<StationListController>().reset();
-            Get.find<SeatController>().reset();
+            try{
+              Navigator.pop(context);
+              Get.back();
+              Get.find<StationListController>().reset();
+              Get.find<SeatController>().reset();
+            } catch(e) {
+              print('팝업 확인시 오류\n$e');
+            }
           },
         ),
       ],

@@ -12,9 +12,14 @@ class SeatSelectionButton extends StatelessWidget {
     return GetBuilder<StationListController>(builder: (controller) {
       return ElevatedButton(
           onPressed: () {
-            if (controller.changedstart && controller.changedend) {
-              Get.toNamed('/SeatPage');
-              Get.find<SeatController>().setStation(controller.startStation, controller.endStation);
+            try {
+              if (controller.changedstart && controller.changedend) {
+                Get.toNamed('/SeatPage');
+                Get.find<SeatController>()
+                    .setStation(controller.startStation, controller.endStation);
+              }
+            } catch (e) {
+              print('좌석 선택 버튼 오류\n$e');
             }
           },
           child: Center(

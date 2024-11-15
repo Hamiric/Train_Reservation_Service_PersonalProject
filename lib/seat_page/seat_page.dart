@@ -21,7 +21,11 @@ class SeatPage extends StatelessWidget {
           // 테마 모드 변경을 위한 아이콘 추가
           IconButton(
             onPressed: () {
-              Get.find<ThemeController>().changeThemeMode();
+              try {
+                Get.find<ThemeController>().changeThemeMode();
+              } catch (e) {
+                print('테마모드 변경 버튼 오류\n$e');
+              }
             },
             icon: Icon(
               Theme.of(context).colorScheme.brightness == Brightness.light

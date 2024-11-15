@@ -64,11 +64,16 @@ class Seats extends StatelessWidget {
   Widget seat(int col, int row) {
     // 선택된 좌석 번호를 SeatController에 전달
     // 이후, 선택된 좌석 색상 변경
+    // 예매된 좌석은 onTap 이벤트 없음
     return GetBuilder<SeatController>(builder: (controller) {
       return GestureDetector(
         onTap: () {
-          if (!controller.isAlreadyReservation(col, row)) {
-            Get.find<SeatController>().setSeat(col, row);
+          try {
+            if (!controller.isAlreadyReservation(col, row)) {
+              Get.find<SeatController>().setSeat(col, row);
+            }
+          } catch (e) {
+            print('좌석 클릭시 오류\n$e');
           }
         },
         child: Container(
@@ -76,11 +81,6 @@ class Seats extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
             color: checkSeatColor(controller, col, row),
-            /*
-                (controller.selectedcol == col && controller.selectedrow == row)
-                    ? Colors.purple
-                    : Colors.grey[300],
-                */
             borderRadius: BorderRadius.circular(8),
           ),
         ),
@@ -89,6 +89,7 @@ class Seats extends StatelessWidget {
   }
 
   // 좌석 색상 체크를 위한 함수
+  // 예매된 좌석이면 연파랑, 선택된 좌석이면 보라, 빈좌석(미선택)이면 회색
   Color checkSeatColor(SeatController controller, int col, int row) {
     if (controller.isAlreadyReservation(col, row)) {
       return Colors.blue[200]!;
