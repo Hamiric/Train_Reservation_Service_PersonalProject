@@ -20,29 +20,35 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ThemeController>(
-      builder: (controller) {
-        return GetMaterialApp(
-          title: 'Train Reservation Service App',
-          debugShowCheckedModeBanner: false,
-          // 테마 모드
-          // light테마(default), dark테마
-          themeMode: controller.themeMode,
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          getPages: [
-            GetPage(name: '/HomePage', page: () => HomePage()),
-            GetPage(name: '/StationListPage', page: () => StationListPage()),
-            GetPage(name: '/SeatPage', page: () => SeatPage()),
-          ],
-          // StationListController, SeatController 생성
-          initialBinding: BindingsBuilder(() {
-            Get.put(StationListController());
-            Get.put(SeatController());
-          }),
-          home: const HomePage(),
-        );
-      }
-    );
+    return GetBuilder<ThemeController>(builder: (controller) {
+      return GetMaterialApp(
+        title: 'Train Reservation Service App',
+        debugShowCheckedModeBanner: false,
+        // 테마 모드
+        // light테마(default), dark테마
+        themeMode: controller.themeMode,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        getPages: [
+          GetPage(name: '/HomePage', page: () => HomePage()),
+          GetPage(
+              name: '/StationListPage',
+              page: () => StationListPage(),
+              transition: Transition.zoom,
+              transitionDuration: Duration(milliseconds: 300)),
+          GetPage(
+              name: '/SeatPage',
+              page: () => SeatPage(),
+              transition: Transition.rightToLeft,
+              transitionDuration: Duration(milliseconds: 500)),
+        ],
+        // StationListController, SeatController 생성
+        initialBinding: BindingsBuilder(() {
+          Get.put(StationListController());
+          Get.put(SeatController());
+        }),
+        home: const HomePage(),
+      );
+    });
   }
 }
