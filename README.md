@@ -44,7 +44,9 @@
 >* HomePage의 출발역,도착역 스왑기능 :
 <br>HomePage의 Swap아이콘버튼을 누르면, 출발역과 도착역이 바뀌게 되는 기능<br><br>
 >* 예매한 좌석은 예매할 수 없도록 하는 기능 :
-<br>한번 예매가 들어간 좌석은 다음 차례에 예매할 때, 더이상 예매가 안되도록 하는 기능.
+<br>한번 예매가 들어간 좌석은 다음 차례에 예매할 때, 더이상 예매가 안되도록 하는 기능.<br><br>
+>* Animation 효과 (페이지이동, Seat선택) :
+<br>페이지 이동시 Getx Transition을 이용한 Animation 효과, Seat 선택시 Animation 효과
 
 ## 🚨 Trouble Shooting
 

@@ -35,12 +35,12 @@ class MyApp extends StatelessWidget {
               name: '/StationListPage',
               page: () => StationListPage(),
               transition: Transition.zoom,
-              transitionDuration: Duration(milliseconds: 300)),
+              transitionDuration: Duration(milliseconds: 100)),
           GetPage(
               name: '/SeatPage',
               page: () => SeatPage(),
               transition: Transition.rightToLeft,
-              transitionDuration: Duration(milliseconds: 500)),
+              transitionDuration: Duration(milliseconds: 300)),
         ],
         // StationListController, SeatController 생성
         initialBinding: BindingsBuilder(() {

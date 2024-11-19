@@ -77,12 +77,13 @@ class Seats extends StatelessWidget {
             logger.e('좌석 클릭시 오류');
           }
         },
-        child: Container(
+        child: AnimatedContainer(
           width: 50,
           height: 50,
+          duration : Duration(milliseconds: 200),
           decoration: BoxDecoration(
             color: checkSeatColor(controller, col, row),
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: checkSeatCircular(controller, col, row),
           ),
         ),
       );
@@ -99,6 +100,20 @@ class Seats extends StatelessWidget {
         return Colors.purple;
       } else {
         return Colors.grey[300]!;
+      }
+    }
+  }
+
+  // 좌석 모양 체크를 위한 함수
+  // 예매된 좌석이면 circular 8, 선택된 좌석이면 circular 15, 빈좌석(미선택)이면 circular 8
+  BorderRadius checkSeatCircular(SeatController controller, int col, int row) {
+    if (controller.isAlreadyReservation(col, row)) {
+      return BorderRadius.circular(8);
+    } else {
+      if (controller.selectedcol == col && controller.selectedrow == row) {
+        return BorderRadius.circular(20);
+      } else {
+        return BorderRadius.circular(8);
       }
     }
   }
