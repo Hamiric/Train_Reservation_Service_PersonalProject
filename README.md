@@ -46,7 +46,9 @@
 >* 예매한 좌석은 예매할 수 없도록 하는 기능 :
 <br>한번 예매가 들어간 좌석은 다음 차례에 예매할 때, 더이상 예매가 안되도록 하는 기능.<br><br>
 >* Animation 효과 (페이지이동, Seat선택) :
-<br>페이지 이동시 Getx Transition을 이용한 Animation 효과, Seat 선택시 Animation 효과
+<br>페이지 이동시 Getx Transition을 이용한 Animation 효과, Seat 선택시 Animation 효과<br><br>
+>* FlutterToast :
+<br>FlutterToast 라이브러리를 이용해, Seat예매를 완료했을경우 토스트메시지가 뜨도록 함
 
 ## 🚨 Trouble Shooting
 
@@ -87,5 +89,5 @@
 | Language | ![Dart Version](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=Dart&logoColor=white) |
 | Framework | ![Flutter Version](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white) |
 | Code Editor | ![VSCode Version](https://img.shields.io/badge/VSCode-0175C2?style=flat-square) |
-| Library | ![GetX Version](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square&logo=GetX&logoColor=white) ![Logger Version](https://img.shields.io/badge/Logger-green?style=flat-square) | |
+| Library | ![GetX Version](https://img.shields.io/badge/GetX-8A2BE2?style=flat-square&logo=GetX&logoColor=white) ![Logger Version](https://img.shields.io/badge/Logger-green?style=flat-square) ![FlutterToast Version](https://img.shields.io/badge/FlutterToast-grey?style=flat-square)| |
 | Version Control | ![Git Version](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white) ![GitHub Version](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white) |

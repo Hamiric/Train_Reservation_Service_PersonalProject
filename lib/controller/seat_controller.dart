@@ -5,6 +5,8 @@ class SeatController extends GetxController {
   // [String, int, int] 형태의 데이터
   List<dynamic> alreadyResevationSeat = [];
 
+  late String startStation;
+  late String endStation;
   late String startendStation;
 
   // 좌석 행, 열
@@ -30,8 +32,8 @@ class SeatController extends GetxController {
   // 출발역-도착역을 저장하고, 만약 좌석이 선택되어져 있는 경우를 대비해 선택좌석 초기화
   // SeatPage를 열고, SeatPage의 UI에만 영향을 끼치므로 Update 필요 없음
   void setStation(String start, String end) {
-    String startStation = start;
-    String endStation = end;
+    startStation = start;
+    endStation = end;
 
     startendStation = startStation + endStation;
 
