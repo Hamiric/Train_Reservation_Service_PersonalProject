@@ -71,7 +71,7 @@ class ReservationButton extends StatelessWidget {
             onPressed: () {
               try {
                 Navigator.pop(context);
-                showToast(controller);
+                showToast(context, controller);
                 Get.back();
                 Get.find<StationListController>().reset();
                 Get.find<SeatController>().reset();
@@ -86,13 +86,20 @@ class ReservationButton extends StatelessWidget {
   }
 }
 
-void showToast(SeatController controller) {
+// Toast 메세지 출력
+void showToast(BuildContext context, SeatController controller) {
   Fluttertoast.showToast(
-    msg: '${controller.startStation} - ${controller.endStation} 행\n좌석 : ${controller.selectedcol + 1} - ${controller.stringRow[controller.selectedrow]}\n예매가 완료되셨습니다.',
+    msg:
+        '${controller.startStation} - ${controller.endStation} 행\n좌석 : ${controller.selectedcol + 1} - ${controller.stringRow[controller.selectedrow]}\n예매가 완료되셨습니다.',
     gravity: ToastGravity.TOP,
     fontSize: 20,
-    textColor: Colors.white,
-    backgroundColor: Colors.black87.withOpacity(0.8),
+    textColor: Theme.of(context).colorScheme.brightness == Brightness.light
+        ? Colors.white
+        : Colors.black87,
+    backgroundColor:
+        Theme.of(context).colorScheme.brightness == Brightness.light
+            ? Colors.black87.withOpacity(0.8)
+            : Colors.white.withOpacity(0.8),
     toastLength: Toast.LENGTH_LONG,
   );
 }
