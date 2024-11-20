@@ -50,31 +50,34 @@ class StationBox extends StatelessWidget {
             logger.e('StationListPage이동중 오류');
           }
         },
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              stationType ? '출발역' : '도착역',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
+        child: Container(
+          color: Colors.transparent,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                stationType ? '출발역' : '도착역',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            // StationListController에 저장되어있는 station값을 읽어서 text에 반영
-            // default text는 '선택'
-            GetBuilder<StationListController>(builder: (controller) {
-              return Text(
-                  stationType ? controller.startStation : controller.endStation,
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Theme.of(context).colorScheme.brightness ==
-                            Brightness.light
-                        ? null
-                        : Colors.white,
-                  ));
-            })
-          ],
+              // StationListController에 저장되어있는 station값을 읽어서 text에 반영
+              // default text는 '선택'
+              GetBuilder<StationListController>(builder: (controller) {
+                return Text(
+                    stationType ? controller.startStation : controller.endStation,
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Theme.of(context).colorScheme.brightness ==
+                              Brightness.light
+                          ? null
+                          : Colors.white,
+                    ));
+              })
+            ],
+          ),
         ),
       ),
     );
