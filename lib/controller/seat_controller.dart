@@ -30,6 +30,7 @@ class SeatController extends GetxController {
 
   // HomePage의 좌석선택버튼을 눌렀을경우 작동하는 로직
   // 출발역-도착역을 저장하고, 만약 좌석이 선택되어져 있는 경우를 대비해 선택좌석 초기화
+  // (버그 수정) readyReservation 값이 초기화가 되지 않았어서 수정..
   // SeatPage를 열고, SeatPage의 UI에만 영향을 끼치므로 Update 필요 없음
   void setStation(String start, String end) {
     startStation = start;
@@ -39,6 +40,8 @@ class SeatController extends GetxController {
 
     selectedcol = -1;
     selectedrow = -1;
+
+    readyReservation = false;
   }
 
   // SeatPage의 ReservationButton에서 확인 버튼을 눌렀을경우 작동하는 로직
